@@ -42,10 +42,19 @@ public class Basicrecur {
         return n + sum2(n - 1, sum);
     }
 
+    public static int fact(int n, int fact) {
+        if (n == 1) {
+            return 1;
+        }
+        fact = n * fact(n - 1, fact);
+        return fact;
+    }
+
     public static void main(String[] args) {
         // PrintName(5, 1);
         // ascending(5, 1);
         // desccending(5);
-        System.out.println(sum2(5, 0));
+        // System.out.println(sum2(5, 0));
+        System.out.println(fact(5, 0));
     }
 }
