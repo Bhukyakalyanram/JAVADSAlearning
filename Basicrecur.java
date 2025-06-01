@@ -50,11 +50,33 @@ public class Basicrecur {
         return fact;
     }
 
+    public static void revarray(int arr[], int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int temp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = temp;
+        revarray(arr, l + 1, r - 1);
+    }
+
+    public static boolean checkpalindrome(String str, int l, int r) {
+        if (l >= r) {
+            return true;
+        }
+        if (str.charAt(l) != str.charAt(r)) {
+            return false;
+        }
+        return checkpalindrome(str, l + 1, r - 1);
+    }
+
     public static void main(String[] args) {
         // PrintName(5, 1);
         // ascending(5, 1);
         // desccending(5);
         // System.out.println(sum2(5, 0));
-        System.out.println(fact(5, 0));
+        // System.out.println(fact(5, 0));
+        System.out.println(checkpalindrome("KALYAN", 0, 4));
+
     }
 }
