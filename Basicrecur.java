@@ -26,9 +26,26 @@ public class Basicrecur {
 
     }
 
+    public static void sum(int n, int sum) {
+        if (n == 0) {
+            System.out.println(sum);
+            return;
+        }
+        sum(n - 1, sum + n);
+    }
+
+    public static int sum2(int n, int sum) {
+        if (n == 0) {
+            return 0;
+        }
+        sum = sum + n;
+        return n + sum2(n - 1, sum);
+    }
+
     public static void main(String[] args) {
         // PrintName(5, 1);
         // ascending(5, 1);
-        desccending(5);
+        // desccending(5);
+        System.out.println(sum2(5, 0));
     }
 }
