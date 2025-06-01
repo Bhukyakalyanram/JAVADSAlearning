@@ -70,6 +70,13 @@ public class Basicrecur {
         return checkpalindrome(str, l + 1, r - 1);
     }
 
+    public static int fib(int n) {
+        if (n == 0 || n == 1) {
+            return n;
+        }
+        return fib(n - 2) + fib(n - 1);
+    }
+
     public static void main(String[] args) {
         // PrintName(5, 1);
         // ascending(5, 1);
@@ -77,6 +84,6 @@ public class Basicrecur {
         // System.out.println(sum2(5, 0));
         // System.out.println(fact(5, 0));
         System.out.println(checkpalindrome("KALYAN", 0, 4));
-
+        System.out.println(fib(9));
     }
 }
