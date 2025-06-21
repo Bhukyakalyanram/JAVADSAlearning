@@ -13,6 +13,7 @@ public class greedyalgo {
             activites[i][0] = i;
             activites[i][1] = start[i];
             activites[i][2] = end[i];
+
         }
         Arrays.sort(activites, Comparator.comparingDouble(o -> o[2]));
         ArrayList<Integer> ans = new ArrayList<>();
