@@ -17,6 +17,30 @@ public class Inorderiter {
         }
     }
 
+    public static ArrayList<Integer> Postorder(Node root) {
+        ArrayList<Integer> List = new ArrayList<>();
+        Stack<Node> St1 = new Stack<>();
+        Stack<Node> St2 = new Stack<>();
+        if (root == null) {
+            return List;
+        }
+        St1.push(root);
+        while (!St1.isEmpty()) {
+            Node temp = St1.pop();
+            St2.push(temp);
+            if (temp.left != null) {
+                St1.push(temp.left);
+            }
+            if (temp.right != null) {
+                St1.push(temp.right);
+            }
+        }
+        while (!St2.isEmpty()) {
+            List.add(St2.pop().data);
+        }
+        return List;
+    }
+
     public static ArrayList<Integer> Inorder(Node root) {
         ArrayList<Integer> list = new ArrayList<>();
         Stack<Node> In = new Stack<>();
@@ -46,7 +70,7 @@ public class Inorderiter {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        System.out.println(Inorder(root));
+        System.out.println(Postorder(root));
     }
 
 }
