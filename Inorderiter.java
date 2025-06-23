@@ -61,6 +61,26 @@ public class Inorderiter {
         return list;
     }
 
+    public static ArrayList<Integer> postOrder(Node root) {
+        ArrayList<Integer> List = new ArrayList<>();
+        Stack<Node> St = new Stack<>();
+        Node curr = root;
+        while (curr != null || !St.isEmpty()) {
+            if (curr != null) {
+                St.push(curr);
+                curr = curr.left;
+            } else {
+                Node temp = St.pop().right;
+                if (temp == null) {
+                    temp = St.pop();
+                    List.add(temp.data);
+
+                }
+            }
+        }
+        return List;
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
