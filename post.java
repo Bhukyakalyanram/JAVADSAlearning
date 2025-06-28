@@ -33,6 +33,7 @@ public class post {
                 if (peekNode.right != null && lastVisited != peekNode.right) {
                     current = peekNode.right;
                 } else {
+                    
                     result.add(peekNode.val);
                     lastVisited = stack.pop();  // Visit node
                 }
