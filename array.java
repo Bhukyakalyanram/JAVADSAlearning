@@ -1,5 +1,4 @@
-
-public class arraysort {
+ class arraysort {
 
     public static boolean isSorted(int nums[]) {
         for (int i = 1; i < nums.length; i++) {
